@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="signal_strong">#00E676</color>
+    <color name="signal_medium">#FFEB3B</color>
+    <color name="signal_weak">#FF5252</color>
+    <color name="signal_critical">#B71C1C</color>
+    <color name="wifi_color">#2196F3</color>
+    <color name="bluetooth_color">#7C4DFF</color>
+    <color name="radar_bg">#1A1A2E</color>
+    <color name="radar_grid">#2A2A4A</color>
+    <color name="primary_green">#00E676</color>
+    <color name="background_dark">#121212</color>
+    <color name="surface_dark">#1E1E1E</color>
+    <color name="text_primary">#EEEEEE</color>
+    <color name="text_secondary">#AAAAAA</color>
+    <color name="hud_label_bg">#CC000000</color>
+    <color name="locked_ring">#FFFFFF</color>
+</resources>
