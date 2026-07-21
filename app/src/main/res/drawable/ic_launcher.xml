@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 背景圆 -->
+    <path
+        android:fillColor="#1A1A2E"
+        android:pathData="M54,54m-48,0a48,48 0,1 1,96 0a48,48 0,1 1,-96 0" />
+
+    <!-- 外圈 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#00E676"
+        android:strokeWidth="2"
+        android:pathData="M54,54m-45,0a45,45 0,1 1,90 0a45,45 0,1 1,-90 0" />
+
+    <!-- 中圈 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#00E676"
+        android:strokeWidth="1"
+        android:strokeAlpha="0.5"
+        android:pathData="M54,54m-30,0a30,30 0,1 1,60 0a30,30 0,1 1,-60 0" />
+
+    <!-- 内圈 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#00E676"
+        android:strokeWidth="1"
+        android:strokeAlpha="0.3"
+        android:pathData="M54,54m-15,0a15,15 0,1 1,30 0a15,15 0,1 1,-30 0" />
+
+    <!-- 十字线 水平 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#00E676"
+        android:strokeWidth="1"
+        android:strokeAlpha="0.4"
+        android:pathData="M9,54L99,54" />
+
+    <!-- 十字线 垂直 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#00E676"
+        android:strokeWidth="1"
+        android:strokeAlpha="0.4"
+        android:pathData="M54,9L54,99" />
+
+    <!-- 扫描线 (45度倾斜) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#00E676"
+        android:strokeWidth="2.5"
+        android:pathData="M54,54L88,20" />
+
+    <!-- 中心点 -->
+    <path
+        android:fillColor="#00E676"
+        android:pathData="M54,54m-4,0a4,4 0,1 1,8 0a4,4 0,1 1,-8 0" />
+
+    <!-- 信号点1 (右上) -->
+    <path
+        android:fillColor="#00E676"
+        android:pathData="M68,38m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0" />
+
+    <!-- 信号点2 (左上) -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M38,30m-3,0a3,3 0,1 1,6 0a3,3 0,1 1,-6 0" />
+
+    <!-- 信号点3 (左下) -->
+    <path
+        android:fillColor="#7C4DFF"
+        android:pathData="M30,68m-2.5,0a2.5,2.5 0,1 1,5 0a2.5,2.5 0,1 1,-5 0" />
+</vector>
