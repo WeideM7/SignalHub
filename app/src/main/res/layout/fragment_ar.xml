@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- 摄像头预览背景 -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 顶部叠加：信号统计 -->
+    <TextView
+        android:id="@+id/tvARStats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="#99000000"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:text="信号: 0 | 显示: 0/8"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp" />
+
+    <!-- 中心十字准星容器 -->
+    <FrameLayout
+        android:id="@+id/crosshairCenter"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center" />
+
+    <!-- 方向指示容器：显示信号在哪个方向 -->
+    <LinearLayout
+        android:id="@+id/layoutDirectionHints"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- 上方信号 -->
+        <LinearLayout
+            android:id="@+id/layoutSignalsTop"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="top|center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="40dp" />
+
+        <!-- 中间行：左信号 + 空白 + 右信号 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- 左侧信号 -->
+            <LinearLayout
+                android:id="@+id/layoutSignalsLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start|center_vertical"
+                android:orientation="vertical"
+                android:paddingStart="8dp" />
+
+            <!-- 中间空白（给十字准星留空间） -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <!-- 右侧信号 -->
+            <LinearLayout
+                android:id="@+id/layoutSignalsRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end|center_vertical"
+                android:orientation="vertical"
+                android:paddingEnd="8dp" />
+        </LinearLayout>
+
+        <!-- 下方信号 + 小雷达 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom|center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="8dp">
+
+            <!-- 下方信号标注 -->
+            <LinearLayout
+                android:id="@+id/layoutSignalsBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="4dp" />
+
+            <!-- 底部小雷达 -->
+            <com.signalhub.scanner.view.RadarView
+                android:id="@+id/miniRadarView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="#000000" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 锁定信号方向大箭头提示（初始隐藏） -->
+    <FrameLayout
+        android:id="@+id/layoutLockedArrow"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvLockedDirection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#CC00E676"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="8dp"
+            android:text="▲ 前方"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <!-- 底部叠加：锁定信号详细信息卡片（初始隐藏） -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardLockedSignal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="120dp"
+        android:backgroundTint="#DD000000"
+        android:visibility="gone"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tvLockedName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#00E676"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvLockedChannel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="#AAAAAA"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvLockedRssi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#4CAF50"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvLockedDistance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:textColor="#4CAF50"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>
