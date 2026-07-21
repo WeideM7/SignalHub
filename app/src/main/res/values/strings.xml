@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SignalHub</string>
+    <string name="tab_radar">雷达</string>
+    <string name="tab_ar">AR 视图</string>
+    <string name="tab_signals">信号列表</string>
+    <string name="scan_start">开始扫描</string>
+    <string name="scan_stop">停止扫描</string>
+    <string name="signal_strength">信号强度</string>
+    <string name="estimated_distance">估计距离</string>
+    <string name="channel_label">信道</string>
+    <string name="lock_signal">锁定追踪</string>
+    <string name="unlock_signal">取消锁定</string>
+    <string name="no_signals">未发现信号源</string>
+    <string name="signal_count">%d 个信号源</string>
+    <string name="wifi_count">WiFi: %d</string>
+    <string name="ble_count">BLE: %d</string>
+    <string name="dbm_unit">dBm</string>
+    <string name="meter_unit">m</string>
+    <string name="channel_format">CH %d (%d MHz)</string>
+    <string name="locked_info">已锁定: %s</string>
+    <string name="permission_title">SignalHub 需要权限</string>
+    <string name="permission_location">位置权限 — 扫描 WiFi/蓝牙信号</string>
+    <string name="permission_camera">相机权限 — AR 抬头显示</string>
+    <string name="permission_bluetooth">蓝牙权限 — 发现 BLE 设备</string>
+    <string name="grant_permissions">授予权限</string>
+    <string name="permission_denied">权限被拒绝，部分功能不可用</string>
+</resources>
